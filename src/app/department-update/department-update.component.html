@@ -1,0 +1,4 @@
+<input *ngIf="shown" type="number" [(ngModel)]="dep.id" />
+<input *ngIf="shown" type="text" [(ngModel)]="dep.name" />
+<button *ngIf="shown" (click)="save()">save</button>
+<button *ngIf="!shown" (click)="show(dep)">update</button>

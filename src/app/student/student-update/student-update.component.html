@@ -1,0 +1,19 @@
+<td *ngIf="shown">
+  <input type="text" class="form-control mx-2" [(ngModel)]="student.id" />
+</td>
+<td *ngIf="shown">
+  <input type="text" class="form-control mx-2" [(ngModel)]="student.name" />
+</td>
+<td *ngIf="shown">
+  <input type="text" class="form-control mx-2" [(ngModel)]="student.age" />
+</td>
+<td *ngIf="shown">
+  <button class="btn btn-success" (click)="update()">Save</button>
+</td>
+
+<td *ngIf="!shown">{{ student.id }}</td>
+<td *ngIf="!shown">{{ student.name }}</td>
+<td *ngIf="!shown">{{ student.age }}</td>
+<td *ngIf="!shown">
+  <button class="btn btn-success" (click)="show()">Update</button>
+</td>

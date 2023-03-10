@@ -1,0 +1,36 @@
+<app-student-add (onStudentAdded)="add($event)"></app-student-add>
+<!-- <app-student-update (onStudentUpdated)="update($event)"></app-student-update> -->
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let std of students; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <!-- <div *ngIf="1"> -->
+        <!-- <td>{{ std.id }}</td>
+        <td>{{ std.name }}</td>
+        <td>{{ std.age }}</td> -->
+        <!-- </div> -->
+        <td colspan="4">
+          <app-student-update
+            [student]="std"
+            (onStudentUpdated)="update($event)"
+          ></app-student-update>
+        </td>
+        <!-- <td><button (click)="update(std)">Update</button></td> -->
+        <td>
+          <app-student-delete (onDelete)="delete(std.id)"></app-student-delete>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

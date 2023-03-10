@@ -1,0 +1,30 @@
+<input type="number" [(ngModel)]="department.id" />
+<input type="text" [(ngModel)]="department.name" />
+<button (click)="add()">Add</button>
+<!-- <button (click)="update()">update</button> -->
+
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dep of departments; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ dep.id }}</td>
+        <td>{{ dep.name }}</td>
+        <td>
+          <button (click)="DetailsId = dep.id">show details</button>
+          <app-department-update [dep]="dep"></app-department-update>
+          <button (click)="delete(dep.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-departments-details [id]="DetailsId"></app-departments-details>
+{{ departmentService.getAllDepartments().length }}
