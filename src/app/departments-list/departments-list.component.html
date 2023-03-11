@@ -10,6 +10,7 @@
         <th scope="col">#</th>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +19,8 @@
         <td>{{ dep.id }}</td>
         <td>{{ dep.name }}</td>
         <td>
-          <button (click)="DetailsId = dep.id">show details</button>
+          <button [routerLink]="['/departments', dep.id]">show details</button>
+          <!-- <button (click)="DetailsId = dep.id">show details</button> -->
           <app-department-update [dep]="dep"></app-department-update>
           <button (click)="delete(dep.id)">Delete</button>
         </td>
@@ -26,5 +28,5 @@
     </tbody>
   </table>
 </div>
-<app-departments-details [id]="DetailsId"></app-departments-details>
-{{ departmentService.getAllDepartments().length }}
+<!-- <app-departments-details [id]="DetailsId"></app-departments-details> -->
+<!-- {{ departmentService.getAllDepartments().length }} -->

@@ -1,6 +1,33 @@
-<app-departments-list></app-departments-list>
-
+<div id="page" align="center">
+  <div id="content" style="width: 800px">
+    <app-header></app-header>
+    <div id="contenttext">
+      <div style="padding: 10px">
+        <span class="titletext">Welcome to RedTie!</span>
+      </div>
+      <div class="bodytext" style="padding: 12px" align="justify">
+        <a routerLink="/departments" routerLinkActive="active">Home</a> |
+        <a routerLink="/contact" routerLinkActive="active">Contact Us</a> |
+        <a routerLink="/about" routerLinkActive="active">About Us</a>
+        <!-- <app-departments-list></app-departments-list> -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <app-side></app-side>
+    <app-footer></app-footer>
+  </div>
+</div>
 <br />
-<br />
-
-<app-student-list></app-student-list>
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+<!-- <div id="page" align="center">
+  <div id="content" style="width: 800px">
+    <p-chart type="pie" [data]="data"></p-chart>
+    <p-message severity="info" text="Message Content"></p-message>
+    <br />
+    <p-calendar [(ngModel)]="value" [inline]="true"></p-calendar>
+    <p-chips [(ngModel)]="values"></p-chips>
+    <br />
+    <p-colorPicker [(ngModel)]="color2"></p-colorPicker>
+    <br />
+  </div>
+</div> -->

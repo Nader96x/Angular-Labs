@@ -16,18 +16,20 @@ export class DepartmentService {
   }
 
   getDepartment(id:number):Department|undefined {
-    return this.departments.find(d => d.id === id);
+    // console.log(id);
+    // console.log(this.departments.find(d => d.id == id));
+    return this.departments.find(d => d.id == id);
   }
   addDepartment(department:Department){
     this.departments.push(new Department(department.id,department.name));
   }
   updateDepartment(department:Department){
-    let i=this.departments.findIndex(d=>d.id===department.id);
+    let i=this.departments.findIndex(d=>d.id==department.id);
     this.departments[i].id = department.id
     this.departments[i].name = department.name;
   }
   deleteDepartment(id:number){
-    let i=this.departments.findIndex(d=>d.id===id);
+    let i=this.departments.findIndex(d=>d.id==id);
     this.departments.splice(i,1);
   }
 }
